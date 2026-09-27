@@ -17,9 +17,7 @@ export default function SortAndTabs() {
         <select
          value={sortBy}
          onChange={(e) => setSortBy(e.target.value)}
-         defaultValue="Sort By" 
          className="select">
-          <option disabled={true}>Sort By</option>
           <option value={'rating'}>Rating</option>
           <option value={'pages'}>Number of Pages</option>
           <option value={'year'}>Published Year</option>

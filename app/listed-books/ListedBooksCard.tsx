@@ -1,6 +1,7 @@
 import { BooksPromiseTypes } from '@/type';
 import Image from 'next/image';
 import Link from 'next/link';
+import ListedBookCardButton from './ListedBookCardButton';
 
 interface ListedBookCardProps {
   book: BooksPromiseTypes;
@@ -118,6 +119,7 @@ export default function ListedBookCard({ book }: ListedBookCardProps) {
           >
             View Details
           </Link>
+          <ListedBookCardButton book={book} />
         </div>
       </div>
     </div>

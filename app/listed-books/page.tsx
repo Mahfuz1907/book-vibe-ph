@@ -1,6 +1,15 @@
 import React from 'react';
 import SortAndTabs from './SortAndTabs';
 import ListedBookList from './ListedBooksList';
+import { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+  title: "Listed Books | BookVibe",
+  icons:{
+    icon: '/book.ico'
+  }
+};
 
 const ListedBooks = () => {
     return (
