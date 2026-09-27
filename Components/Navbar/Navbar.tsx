@@ -13,7 +13,7 @@ export default function Navbar() {
 
 
   return (
-    <nav className="w-full bg-white py-4 px-6 md:px-12">
+    <nav className="w-full bg-white py-4 px-6 md:px-12 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold text-gray-900 tracking-tight">
           Book Vibe
