@@ -5,7 +5,7 @@ import { useContext } from "react";
 
 
 export default function SortAndTabs() {
-  const {tab, setTab} = useContext(BooksContext)
+  const {tab, setTab, sortBy, setSortBy} = useContext(BooksContext)
 
   const handleTab = (tabType:string) => {
     setTab(tabType)
@@ -14,11 +14,15 @@ export default function SortAndTabs() {
   return (
     <div className="space-y-8">
       <div className="flex justify-center">
-        <select defaultValue="Sort By" className="select">
+        <select
+         value={sortBy}
+         onChange={(e) => setSortBy(e.target.value)}
+         defaultValue="Sort By" 
+         className="select">
           <option disabled={true}>Sort By</option>
-          <option>Rating</option>
-          <option>Number of Pages</option>
-          <option>Published Year</option>
+          <option value={'rating'}>Rating</option>
+          <option value={'pages'}>Number of Pages</option>
+          <option value={'year'}>Published Year</option>
         </select>
       </div>
 
