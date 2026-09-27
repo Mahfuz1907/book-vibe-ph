@@ -12,6 +12,28 @@ const getBooks = async() => {
     return data
 }
 
+export async function generateMetadata ({params}: BookDetailsTypes){
+  const {id} = await params
+  const books = await getBooks()
+  const book = books[Number(id) - 1]
+
+  if(!book){
+    return {
+      title: 'Book Not Found | BookVibe',
+      icons: {
+        icon: '/book.ico'
+      }
+    }
+  }
+
+  return {
+    title: `${book.bookName} | BookVibe`,
+    icons: {
+      icon: '/book.ico'
+    }
+  }
+}
+
 const BookDetails = async({params}: BookDetailsTypes) => {
     const books = await getBooks()
     const {id} = await params
@@ -68,7 +90,6 @@ const BookDetails = async({params}: BookDetailsTypes) => {
 
           <div className="border-t border-gray-200" />
 
-          {/* Table Details */}
           <div className="max-w-md space-y-3 text-sm md:text-base">
             <div className="grid grid-cols-2">
               <span className="text-gray-500">Number of Pages:</span>
@@ -88,7 +109,7 @@ const BookDetails = async({params}: BookDetailsTypes) => {
             </div>
           </div>
 
-          <BookActionButtons bookId={book} />
+          <BookActionButtons book={book} />
         </div>
 
       </div>
